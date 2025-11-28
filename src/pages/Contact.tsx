@@ -32,7 +32,7 @@ export const Contact = () => {
   return (
     <div className="container py-5">
       {/* Page Heading */}
-      <h1 className="mt-4 mb-3 text-accent-teal font-bold">Contact</h1>
+      {/* <h1 className="mt-4 mb-3 text-accent-teal font-bold">Contact</h1> */}
       
       {/* Breadcrumb */}
       <nav aria-label="breadcrumb">
