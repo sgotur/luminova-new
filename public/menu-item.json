@@ -6,49 +6,103 @@
         {
           "label": "GenAI Development",
           "children": [
-            { "label": "GenAI Solutions", "url": "/solutions/genai-solutions" },
-            { "label": "Cloud-first BI reporting", "url": "/solutions/cloud-bi-reporting" },
-            { "label": "Low-Code/No-Code", "url": "/solutions/low-code-no-code" }
+            {
+              "label": "GenAI Solutions",
+              "url": "/solutions/genai-solutions"
+            },
+            {
+              "label": "Cloud-first BI reporting",
+              "url": "/solutions/cloud-bi-reporting"
+            },
+            {
+              "label": "Low-Code/No-Code",
+              "url": "/solutions/low-code-no-code"
+            }
           ]
         },
         {
           "label": "Data & AI",
           "children": [
-            { "label": "Data Engineering", "url": "/solutions/data-engineering" },
-            { "label": "Advanced Analytics", "url": "/solutions/advanced-analytics" },
-            { "label": "Applied AI & ML", "url": "/solutions/applied-ai-ml" },
             {
-              "label": "No-SQL Implementation",
-              "children": [
-                { "label": "Document Database", "url": "/solutions/document-database" },
-                { "label": "Graph Database", "url": "/solutions/graph-database" },
-                { "label": "Timeseries database", "url": "/solutions/timeseries-database" }
-              ]
+              "label": "Data Engineering",
+              "url": "/solutions/data-engineering"
+            },
+            {
+              "label": "Advanced Analytics",
+              "url": "/solutions/advanced-analytics"
+            },
+            {
+              "label": "Applied AI & ML",
+              "url": "/solutions/applied-ai-ml"
+            }
+          ]
+        },
+        {
+          "label": "No-SQL Implementation",
+          "children": [
+            {
+              "label": "Document Database",
+              "url": "/solutions/document-database"
+            },
+            {
+              "label": "Graph Database",
+              "url": "/solutions/graph-database"
+            },
+            {
+              "label": "Timeseries database",
+              "url": "/solutions/timeseries-database"
             }
           ]
         },
         {
           "label": "Migration & Modernization",
           "children": [
-            { "label": "Application Modernization", "url": "/solutions/application-modernization" },
-            { "label": "Database Modernization", "url": "/solutions/database-modernization" }
+            {
+              "label": "Application Modernization",
+              "url": "/solutions/application-modernization"
+            },
+            {
+              "label": "Database Modernization",
+              "url": "/solutions/database-modernization"
+            }
           ]
         },
         {
           "label": "SAAS Engineering",
           "children": [
-            { "label": "MVP Development", "url": "/solutions/mvp-development" },
-            { "label": "End to End SaaS Development", "url": "/solutions/end-to-end-saas" },
-            { "label": "Modernized Architecture", "url": "/solutions/modernized-architecture" }
+            {
+              "label": "MVP Development",
+              "url": "/solutions/mvp-development"
+            },
+            {
+              "label": "End to End SaaS Development",
+              "url": "/solutions/end-to-end-saas"
+            },
+            {
+              "label": "Modernized Architecture",
+              "url": "/solutions/modernized-architecture"
+            }
           ]
         },
         {
           "label": "Professional services",
           "children": [
-            { "label": "Fractional CTO", "url": "/solutions/fractional-cto" },
-            { "label": "Application Development", "url": "/solutions/application-development" },
-            { "label": "Mobile Development", "url": "/solutions/mobile-development" },
-            { "label": "Dev-Ops", "url": "/solutions/devops" }
+            {
+              "label": "Fractional CTO",
+              "url": "/solutions/fractional-cto"
+            },
+            {
+              "label": "Application Development",
+              "url": "/solutions/application-development"
+            },
+            {
+              "label": "Mobile Development",
+              "url": "/solutions/mobile-development"
+            },
+            {
+              "label": "Dev-Ops",
+              "url": "/solutions/devops"
+            }
           ]
         }
       ]
@@ -56,32 +110,73 @@
     {
       "label": "Products",
       "children": [
-        { "label": "Nestorapp.ai", "url": "/products/nestorapp" },
-        { "label": "CollegeFinder.ai", "url": "/products/collegefinder" },
-        { "label": "MetaWeaver", "url": "/products/metaweaver" }
+        {
+          "label": "Nestorapp.ai",
+          "url": "/products/nestorapp"
+        },
+        {
+          "label": "CollegeFinder.ai",
+          "url": "/products/collegefinder"
+        },
+        {
+          "label": "MetaWeaver",
+          "url": "/products/metaweaver"
+        }
       ]
     },
     {
       "label": "Industries",
       "children": [
-        { "label": "Financial Services", "url": "/industries/financial-services" },
-        { "label": "Retail & Consumer Goods", "url": "/industries/retail" },
-        { "label": "Healthcare", "url": "/industries/healthcare" },
-        { "label": "Manufacturing", "url": "/industries/manufacturing" },
-        { "label": "Education", "url": "/industries/education" },
-        { "label": "Energy & Utilities", "url": "/industries/energy" }
+        {
+          "label": "Financial Services",
+          "url": "/industries/financial-services"
+        },
+        {
+          "label": "Retail & Consumer Goods",
+          "url": "/industries/retail"
+        },
+        {
+          "label": "Healthcare",
+          "url": "/industries/healthcare"
+        },
+        {
+          "label": "Manufacturing",
+          "url": "/industries/manufacturing"
+        },
+        {
+          "label": "Education",
+          "url": "/industries/education"
+        },
+        {
+          "label": "Energy & Utilities",
+          "url": "/industries/energy"
+        }
       ]
     },
     {
       "label": "Resources",
       "children": [
-        { "label": "Blogs" },
-        { "label": "Case Studies" },
-        { "label": "Whitepaper" },
-        { "label": "Downloadables" }
+        {
+          "label": "Blogs"
+        },
+        {
+          "label": "Case Studies"
+        },
+        {
+          "label": "Whitepaper"
+        },
+        {
+          "label": "Downloadables"
+        }
       ]
     },
-    { "label": "About", "url": "/about" },
-    { "label": "Contact Us", "url": "/contact" }
+    {
+      "label": "About",
+      "url": "/about"
+    },
+    {
+      "label": "Contact Us",
+      "url": "/contact"
+    }
   ]
 }
