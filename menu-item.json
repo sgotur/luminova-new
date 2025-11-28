@@ -1,0 +1,87 @@
+{
+  "menu": [
+    {
+      "label": "Solutions",
+      "children": [
+        {
+          "label": "GenAI Development",
+          "children": [
+            { "label": "GenAI Solutions" },
+            { "label": "Cloud-first BI reporting" },
+            { "label": "Low-Code/No-Code" }
+          ]
+        },
+        {
+          "label": "Data & AI",
+          "children": [
+            { "label": "Data Engineering" },
+            { "label": "Advanced Analytics" },
+            { "label": "Applied AI & ML" },
+            {
+              "label": "No-SQL Implementation",
+              "children": [
+                { "label": "Document Database" },
+                { "label": "Graph Database" },
+                { "label": "Timeseries database" }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Migration & Modernization",
+          "children": [
+            { "label": "Application Modernization" },
+            { "label": "Database Modernization" }
+          ]
+        },
+        {
+          "label": "SAAS Engineering",
+          "children": [
+            { "label": "MVP Development" },
+            { "label": "End to End SaaS Development" },
+            { "label": "Modernized Architecture" }
+          ]
+        },
+        {
+          "label": "Professional services",
+          "children": [
+            { "label": "Fractional CTO" },
+            { "label": "Application Development" },
+            { "label": "Mobile Development" },
+            { "label": "Dev-Ops" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Products",
+      "children": [
+        { "label": "Nestorapp.ai", "url": "/products/nestorapp" },
+        { "label": "CollegeFinder.ai", "url": "/products/collegefinder" },
+        { "label": "MetaWeaver", "url": "/products/metaweaver" }
+      ]
+    },
+    {
+      "label": "Industries",
+      "children": [
+        { "label": "Financial Services" },
+        { "label": "Retail & Consumer Goods" },
+        { "label": "Healthcare" },
+        { "label": "Manufacturing" },
+        { "label": "Education" },
+        { "label": "Energy & Utilities" }
+      ]
+    },
+    {
+      "label": "Resources",
+      "children": [
+        { "label": "Blogs" },
+        { "label": "Case Studies" },
+        { "label": "Whitepaper" },
+        { "label": "Downloadables" }
+      ]
+    },
+    { "label": "About", "url": "/about" },
+    { "label": "Contact Us", "url": "/contact" }
+  ]
+}

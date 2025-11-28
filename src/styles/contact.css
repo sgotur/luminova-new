@@ -1,0 +1,33 @@
+/* Contact Form Styles */
+
+/* Teal border for form inputs */
+#contactForm .form-control {
+  border-color: #00A8B5 !important;
+  border-width: 2px !important;
+}
+
+#contactForm .form-control:focus {
+  border-color: #00A8B5 !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 168, 181, 0.25) !important;
+}
+
+#contactForm .form-control:hover {
+  border-color: #0891B2 !important;
+}
+
+/* Override Bootstrap validation styles */
+#contactForm .form-control:invalid {
+  border-color: #00A8B5 !important;
+}
+
+#contactForm .form-control:valid {
+  border-color: #00A8B5 !important;
+}
+
+#contactForm .form-control.is-invalid {
+  border-color: #00A8B5 !important;
+}
+
+#contactForm .form-control.is-valid {
+  border-color: #00A8B5 !important;
+}

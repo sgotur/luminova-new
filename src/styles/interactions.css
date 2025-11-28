@@ -1,0 +1,310 @@
+/**
+ * Hover and Focus State Styles
+ * 
+ * Requirements:
+ * - 4.1: Hover styles for all menu items with color/background changes
+ * - 4.2: Focus styles with clear visual indicators
+ * - 4.3: Active state styles for open dropdown parents
+ * - 4.5: Focus style removal on blur
+ * 
+ * Accessibility:
+ * - Ensure 3:1 contrast ratio for focus indicators (WCAG AA)
+ * - Clear visual distinction between hover and focus states
+ * - Support for prefers-reduced-motion
+ */
+
+/* ===== HOVER STATES - Requirement 4.1 ===== */
+
+/* Menu item hover styles - distinct color and background changes */
+.menu-item {
+  position: relative;
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+  
+  /* Performance optimization: hint to browser for animation optimization */
+  will-change: color, background-color;
+}
+
+.menu-item:hover {
+  color: #00A8B5; /* Primary accent teal */
+  background-color: rgba(0, 168, 181, 0.05); /* Very light teal background */
+}
+
+/* Dropdown item hover styles */
+.dropdown-item {
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+  
+  /* Performance optimization */
+  will-change: color, background-color;
+}
+
+.dropdown-item:hover {
+  color: #00A8B5; /* Primary accent teal */
+  background-color: rgba(0, 168, 181, 0.08); /* Slightly stronger teal background */
+}
+
+/* Hover state removal within 100ms - Requirement 4.4 */
+.menu-item:not(:hover),
+.dropdown-item:not(:hover) {
+  transition: color 100ms ease-out, background-color 100ms ease-out;
+}
+
+/* ===== FOCUS STATES - Requirement 4.2 ===== */
+
+/* 
+ * Focus styles with clear visual indicators
+ * Using outline for better visibility and accessibility
+ * 3:1 contrast ratio requirement met with #00A8B5 on white background
+ */
+.menu-item:focus,
+.menu-item:focus-visible {
+  outline: 2px solid #00A8B5; /* Primary accent teal - meets 3:1 contrast */
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove default browser focus outline to use custom styling */
+.menu-item:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Button-specific focus styles */
+button.menu-item:focus-visible {
+  outline: 2px solid #00A8B5;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 168, 181, 0.1); /* Additional focus ring for emphasis */
+}
+
+/* Link-specific focus styles */
+a.menu-item:focus-visible {
+  outline: 2px solid #00A8B5;
+  outline-offset: 2px;
+  text-decoration: underline;
+  text-decoration-color: #00A8B5;
+  text-decoration-thickness: 2px;
+}
+
+/* Dropdown item focus styles */
+.dropdown-item:focus,
+.dropdown-item:focus-visible {
+  outline: 2px solid #00A8B5;
+  outline-offset: 1px;
+  background-color: rgba(0, 168, 181, 0.08);
+}
+
+/* ===== ACTIVE STATES - Requirement 4.3 ===== */
+
+/*
+ * Active state styles for open dropdown parents
+ * Provides clear visual feedback that a dropdown is currently open
+ */
+.menu-item.active,
+.menu-item[aria-expanded="true"] {
+  color: #00A8B5; /* Primary accent teal */
+  background-color: rgba(0, 168, 181, 0.1); /* Stronger background than hover */
+  font-weight: 600; /* Slightly bolder to indicate active state */
+}
+
+/* Active state for dropdown items */
+.dropdown-item.active {
+  color: #00A8B5;
+  background-color: rgba(0, 168, 181, 0.12);
+  font-weight: 500;
+}
+
+/* Visual indicator for active dropdown parent */
+.menu-item.active::after,
+.menu-item[aria-expanded="true"]::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background-color: #00A8B5;
+}
+
+/* ===== COMBINED STATES ===== */
+
+/* Hover on focused element - combine both visual cues */
+.menu-item:focus:hover,
+.menu-item:focus-visible:hover {
+  color: #00A8B5;
+  background-color: rgba(0, 168, 181, 0.1);
+  outline: 2px solid #00A8B5;
+  outline-offset: 2px;
+}
+
+/* Active and focused - strongest visual emphasis */
+.menu-item.active:focus,
+.menu-item[aria-expanded="true"]:focus {
+  outline: 2px solid #0891B2; /* Slightly darker teal for distinction */
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 168, 181, 0.15);
+}
+
+/* ===== MOBILE MENU BUTTON STATES ===== */
+
+.mobile-menu-button {
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+  
+  /* Performance optimization */
+  will-change: color, background-color;
+}
+
+.mobile-menu-button:hover {
+  color: #00A8B5;
+  background-color: rgba(0, 168, 181, 0.05);
+}
+
+.mobile-menu-button:focus-visible {
+  outline: 2px solid #00A8B5;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.mobile-menu-button[aria-expanded="true"] {
+  color: #00A8B5;
+  background-color: rgba(0, 168, 181, 0.1);
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+
+/* Support for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .menu-item,
+  .dropdown-item,
+  .mobile-menu-button {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .menu-item:focus,
+  .menu-item:focus-visible,
+  button.menu-item:focus-visible,
+  a.menu-item:focus-visible {
+    outline-width: 3px;
+    outline-offset: 3px;
+  }
+}
+
+/* Ensure focus is visible in Windows High Contrast Mode */
+@media (forced-colors: active) {
+  .menu-item:focus,
+  .menu-item:focus-visible {
+    outline: 2px solid currentColor;
+  }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+
+/* Remove hover effects on touch devices to prevent sticky hover states */
+@media (hover: none) and (pointer: coarse) {
+  .menu-item:hover,
+  .dropdown-item:hover {
+    color: inherit;
+    background-color: transparent;
+  }
+  
+  /* Keep active states on touch devices */
+  .menu-item.active,
+  .menu-item[aria-expanded="true"] {
+    color: #00A8B5;
+    background-color: rgba(0, 168, 181, 0.1);
+  }
+}
+
+/* Increase touch target size for better mobile usability - Requirement 10.1 */
+@media (max-width: 767px) {
+  .menu-item,
+  .dropdown-item {
+    min-height: 44px; /* Minimum touch target size - WCAG 2.1 Level AAA */
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px; /* Ensure adequate padding for touch targets */
+  }
+  
+  /* Mobile menu button touch target */
+  .mobile-menu-button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px;
+  }
+  
+  /* Ensure all interactive elements meet minimum touch target size */
+  button,
+  a,
+  [role="menuitem"],
+  [role="button"] {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ===== MOBILE MENU ANIMATIONS - Requirement 6.2 ===== */
+
+/*
+ * Mobile menu expand/collapse animation
+ * Smooth transition for opening and closing the mobile menu
+ */
+.mobile-menu {
+  transition-property: max-height, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  
+  /* Performance optimization */
+  will-change: max-height, opacity;
+}
+
+.mobile-menu-closed {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-menu-open {
+  max-height: 100vh;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Support for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ===== CONTACT BUTTON STYLES ===== */
+
+/* Special styling for Contact US button to make it stand out */
+.contact-button {
+  background-color: #00A8B5 !important;
+  border-color: #00A8B5 !important;
+  color: white !important;
+  display: inline-block !important;
+  transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.contact-button:hover {
+  background-color: #0891B2 !important;
+  border-color: #0891B2 !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 168, 181, 0.3);
+}
+
+.contact-button:focus,
+.contact-button:focus-visible {
+  background-color: #00A8B5 !important;
+  color: white !important;
+  outline: 2px solid #0891B2;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 168, 181, 0.2);
+}

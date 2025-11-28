@@ -1,0 +1,132 @@
+/**
+ * App Component Styles
+ * 
+ * Requirements:
+ * - Clean, minimal design with white background
+ * - Consistent spacing and typography
+ * - Responsive layout
+ */
+
+.App {
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+main {
+  flex: 1;
+}
+
+/* Smooth scrolling for skip links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Support for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Ensure consistent box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Alert banner styling for error notifications */
+.alert {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Support for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .alert {
+    animation: none;
+  }
+}
+
+/* Loading spinner container */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #F7F7F9;
+}
+
+/* Feature list styling */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.feature-list svg {
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Card enhancements */
+.card {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Support for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}
+
+/* Responsive typography */
+@media (min-width: 768px) {
+  .text-responsive-lg {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-responsive-lg {
+    font-size: 1.5rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .alert,
+  .mobile-menu-button,
+  nav button {
+    display: none;
+  }
+  
+  .App {
+    background-color: white;
+  }
+}

@@ -1,0 +1,120 @@
+/**
+ * Dropdown Transition Styles
+ * 
+ * Requirements:
+ * - 3.1: Opacity transitions (200-400ms duration)
+ * - 3.2: Transform transitions
+ * - 3.4: Consistent transition properties for open and close
+ * 
+ * Performance Optimizations:
+ * - Uses GPU-accelerated properties (transform, opacity)
+ * - will-change hint for browsers to optimize animations
+ * - Hardware acceleration with translate3d
+ */
+
+/* Base dropdown styles with transition properties */
+.dropdown {
+  /* Transition properties applied to both open and close - Requirement 3.4 */
+  transition-property: opacity, transform;
+  transition-duration: 300ms; /* Within 200-400ms range - Requirement 3.1 */
+  transition-timing-function: ease-in-out;
+  
+  /* Performance optimization: hint to browser for animation optimization */
+  will-change: opacity, transform;
+  
+  /* Force hardware acceleration for smoother animations */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* Hidden state - dropdown is closed */
+.dropdown-hidden {
+  opacity: 0 !important; /* Requirement 3.1: Opacity transition */
+  /* Use translate3d for hardware acceleration - Requirement 3.2 */
+  transform: translate3d(0, -10px, 0) scale(0.95) !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  display: none !important; /* Ensure dropdown is completely hidden */
+}
+
+/* Visible state - dropdown is open */
+.dropdown-visible {
+  opacity: 1 !important; /* Requirement 3.1: Opacity transition */
+  /* Use translate3d for hardware acceleration - Requirement 3.2 */
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  display: block !important; /* Ensure dropdown is visible */
+}
+
+/* Nested dropdown positioning adjustments */
+.dropdown-nested {
+  /* Nested dropdowns slide in from the left instead of top */
+  transition-property: opacity, transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  
+  /* Performance optimization */
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+.dropdown-nested.dropdown-hidden {
+  opacity: 0 !important;
+  /* Use translate3d for hardware acceleration */
+  transform: translate3d(-10px, 0, 0) scale(0.95) !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  display: none !important;
+}
+
+.dropdown-nested.dropdown-visible {
+  opacity: 1 !important;
+  /* Use translate3d for hardware acceleration */
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Mobile dropdown transitions - inline expansion */
+.dropdown-mobile {
+  transition-property: opacity, max-height;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  overflow: hidden;
+}
+
+.dropdown-mobile.dropdown-hidden {
+  opacity: 0 !important;
+  max-height: 0 !important;
+  display: none !important;
+}
+
+.dropdown-mobile.dropdown-visible {
+  opacity: 1 !important;
+  max-height: 1000px !important; /* Large enough for most menus */
+  display: block !important;
+}
+
+/* Ensure z-index layering for proper stacking - Requirement 3.3, 3.5 */
+.dropdown-level-1 {
+  z-index: 10;
+}
+
+.dropdown-level-2 {
+  z-index: 20;
+}
+
+.dropdown-level-3 {
+  z-index: 30;
+}
+
+/* Support for reduced motion preference - Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .dropdown,
+  .dropdown-nested,
+  .dropdown-mobile {
+    transition-duration: 0.01ms !important;
+  }
+}
