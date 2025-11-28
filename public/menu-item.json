@@ -30,25 +30,25 @@
         {
           "label": "Migration & Modernization",
           "children": [
-            { "label": "Application Modernization" },
-            { "label": "Database Modernization" }
+            { "label": "Application Modernization", "url": "/solutions/application-modernization" },
+            { "label": "Database Modernization", "url": "/solutions/database-modernization" }
           ]
         },
         {
           "label": "SAAS Engineering",
           "children": [
-            { "label": "MVP Development" },
-            { "label": "End to End SaaS Development" },
-            { "label": "Modernized Architecture" }
+            { "label": "MVP Development", "url": "/solutions/mvp-development" },
+            { "label": "End to End SaaS Development", "url": "/solutions/end-to-end-saas" },
+            { "label": "Modernized Architecture", "url": "/solutions/modernized-architecture" }
           ]
         },
         {
           "label": "Professional services",
           "children": [
-            { "label": "Fractional CTO" },
-            { "label": "Application Development" },
-            { "label": "Mobile Development" },
-            { "label": "Dev-Ops" }
+            { "label": "Fractional CTO", "url": "/solutions/fractional-cto" },
+            { "label": "Application Development", "url": "/solutions/application-development" },
+            { "label": "Mobile Development", "url": "/solutions/mobile-development" },
+            { "label": "Dev-Ops", "url": "/solutions/devops" }
           ]
         }
       ]

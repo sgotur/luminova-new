@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Navigation, SkipLink, ErrorBoundary } from './components';
-import { Home, NestorApp, CollegeFinder, MetaWeaver, About, Contact, ComingSoon, GenAISolutions, CloudBIReporting, LowCodeNoCode, DataEngineering, AdvancedAnalytics, AppliedAIML, DocumentDatabase, GraphDatabase, TimeseriesDatabase, Healthcare } from './pages';
+import { Home, NestorApp, CollegeFinder, MetaWeaver, About, Contact, ComingSoon, GenAISolutions, CloudBIReporting, LowCodeNoCode, DataEngineering, AdvancedAnalytics, AppliedAIML, DocumentDatabase, GraphDatabase, TimeseriesDatabase, ApplicationModernization, DatabaseModernization, MVPDevelopment, EndToEndSaaS, ModernizedArchitecture, FractionalCTO, ApplicationDevelopment, MobileDevelopment, DevOps, Healthcare } from './pages';
 import type { MenuData } from './utils/types';
 import { addUrlsToMenuItems } from './utils/seoHelpers';
 import { loadMenuData as loadMenuDataUtil, getDefaultMenu } from './utils/menuLoader';
@@ -172,6 +172,15 @@ function App() {
               <Route path="/solutions/document-database" element={<DocumentDatabase />} />
               <Route path="/solutions/graph-database" element={<GraphDatabase />} />
               <Route path="/solutions/timeseries-database" element={<TimeseriesDatabase />} />
+              <Route path="/solutions/application-modernization" element={<ApplicationModernization />} />
+              <Route path="/solutions/database-modernization" element={<DatabaseModernization />} />
+              <Route path="/solutions/mvp-development" element={<MVPDevelopment />} />
+              <Route path="/solutions/end-to-end-saas" element={<EndToEndSaaS />} />
+              <Route path="/solutions/modernized-architecture" element={<ModernizedArchitecture />} />
+              <Route path="/solutions/fractional-cto" element={<FractionalCTO />} />
+              <Route path="/solutions/application-development" element={<ApplicationDevelopment />} />
+              <Route path="/solutions/mobile-development" element={<MobileDevelopment />} />
+              <Route path="/solutions/devops" element={<DevOps />} />
               
               {/* Industries */}
               <Route path="/industries/healthcare" element={<Healthcare />} />
