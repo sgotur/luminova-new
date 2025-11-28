@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Navigation, SkipLink, ErrorBoundary } from './components';
-import { Home, NestorApp, CollegeFinder, MetaWeaver, About, Contact, ComingSoon, GenAISolutions, DataEngineering, DocumentDatabase, Healthcare } from './pages';
+import { Home, NestorApp, CollegeFinder, MetaWeaver, About, Contact, ComingSoon, GenAISolutions, CloudBIReporting, LowCodeNoCode, DataEngineering, AdvancedAnalytics, AppliedAIML, DocumentDatabase, GraphDatabase, TimeseriesDatabase, Healthcare } from './pages';
 import type { MenuData } from './utils/types';
 import { addUrlsToMenuItems } from './utils/seoHelpers';
 import { loadMenuData as loadMenuDataUtil, getDefaultMenu } from './utils/menuLoader';
@@ -164,8 +164,14 @@ function App() {
               
               {/* Solutions */}
               <Route path="/solutions/genai-solutions" element={<GenAISolutions />} />
+              <Route path="/solutions/cloud-bi-reporting" element={<CloudBIReporting />} />
+              <Route path="/solutions/low-code-no-code" element={<LowCodeNoCode />} />
               <Route path="/solutions/data-engineering" element={<DataEngineering />} />
+              <Route path="/solutions/advanced-analytics" element={<AdvancedAnalytics />} />
+              <Route path="/solutions/applied-ai-ml" element={<AppliedAIML />} />
               <Route path="/solutions/document-database" element={<DocumentDatabase />} />
+              <Route path="/solutions/graph-database" element={<GraphDatabase />} />
+              <Route path="/solutions/timeseries-database" element={<TimeseriesDatabase />} />
               
               {/* Industries */}
               <Route path="/industries/healthcare" element={<Healthcare />} />

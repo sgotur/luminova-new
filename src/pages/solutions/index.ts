@@ -1,3 +1,9 @@
 export { GenAISolutions } from './GenAISolutions';
+export { CloudBIReporting } from './CloudBIReporting';
+export { LowCodeNoCode } from './LowCodeNoCode';
 export { DataEngineering } from './DataEngineering';
+export { AdvancedAnalytics } from './AdvancedAnalytics';
+export { AppliedAIML } from './AppliedAIML';
 export { DocumentDatabase } from './DocumentDatabase';
+export { GraphDatabase } from './GraphDatabase';
+export { TimeseriesDatabase } from './TimeseriesDatabase';

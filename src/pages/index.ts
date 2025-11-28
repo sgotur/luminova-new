@@ -8,7 +8,7 @@ export { ComingSoon } from './ComingSoon';
 export { GenericPage } from './GenericPage';
 
 // Solutions
-export { GenAISolutions, DataEngineering, DocumentDatabase } from './solutions';
+export { GenAISolutions, CloudBIReporting, LowCodeNoCode, DataEngineering, AdvancedAnalytics, AppliedAIML, DocumentDatabase, GraphDatabase, TimeseriesDatabase } from './solutions';
 
 // Industries
 export { Healthcare } from './industries';
