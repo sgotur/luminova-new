@@ -173,23 +173,25 @@ export const Navigation: React.FC<NavigationProps> = ({ menuData, logo, business
           {/* Logo and Business Name - Requirements 1.1, 1.2, 9.5 */}
           {/* Bootstrap column for logo section - Requirement 7.4 */}
           <div className="col-auto">
-            <div className="d-flex align-items-center gap-3">
-              <Logo 
-                src={logo} 
-                alt={`${businessName} logo`} 
-                businessName={businessName}
-              />
-              {/* Tailwind typography classes - Requirement 7.3 */}
-              {/* h1 for business name - proper heading hierarchy - Requirements 9.4, 9.5 */}
-              <div>
-                <h1 className="text-accent-teal text-xl font-semibold mb-0">
-                  {businessName}
-                </h1>
-                <p className="text-accent-teal mb-0 font-bold" style={{ fontSize: '0.95rem', letterSpacing: '0.5px', fontWeight: '700' }}>
-                  * Grow with AI *
-                </p>
+            <a href="/" className="text-decoration-none" style={{ cursor: 'pointer' }}>
+              <div className="d-flex align-items-center gap-3">
+                <Logo 
+                  src={logo} 
+                  alt={`${businessName} logo`} 
+                  businessName={businessName}
+                />
+                {/* Tailwind typography classes - Requirement 7.3 */}
+                {/* h1 for business name - proper heading hierarchy - Requirements 9.4, 9.5 */}
+                <div>
+                  <h1 className="text-accent-teal text-xl font-semibold mb-0">
+                    {businessName}
+                  </h1>
+                  <p className="text-accent-teal mb-0 font-bold" style={{ fontSize: '0.95rem', letterSpacing: '0.5px', fontWeight: '700' }}>
+                    * Grow with AI *
+                  </p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle - Requirement 1.4, 6.1 */}
