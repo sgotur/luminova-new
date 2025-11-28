@@ -4,3 +4,11 @@ export { CollegeFinder } from './CollegeFinder';
 export { MetaWeaver } from './MetaWeaver';
 export { About } from './About';
 export { Contact } from './Contact';
+export { ComingSoon } from './ComingSoon';
+export { GenericPage } from './GenericPage';
+
+// Solutions
+export { GenAISolutions, DataEngineering, DocumentDatabase } from './solutions';
+
+// Industries
+export { Healthcare } from './industries';

@@ -6,23 +6,23 @@
         {
           "label": "GenAI Development",
           "children": [
-            { "label": "GenAI Solutions" },
-            { "label": "Cloud-first BI reporting" },
-            { "label": "Low-Code/No-Code" }
+            { "label": "GenAI Solutions", "url": "/solutions/genai-solutions" },
+            { "label": "Cloud-first BI reporting", "url": "/solutions/cloud-bi-reporting" },
+            { "label": "Low-Code/No-Code", "url": "/solutions/low-code-no-code" }
           ]
         },
         {
           "label": "Data & AI",
           "children": [
-            { "label": "Data Engineering" },
-            { "label": "Advanced Analytics" },
-            { "label": "Applied AI & ML" },
+            { "label": "Data Engineering", "url": "/solutions/data-engineering" },
+            { "label": "Advanced Analytics", "url": "/solutions/advanced-analytics" },
+            { "label": "Applied AI & ML", "url": "/solutions/applied-ai-ml" },
             {
               "label": "No-SQL Implementation",
               "children": [
-                { "label": "Document Database" },
-                { "label": "Graph Database" },
-                { "label": "Timeseries database" }
+                { "label": "Document Database", "url": "/solutions/document-database" },
+                { "label": "Graph Database", "url": "/solutions/graph-database" },
+                { "label": "Timeseries database", "url": "/solutions/timeseries-database" }
               ]
             }
           ]
@@ -64,12 +64,12 @@
     {
       "label": "Industries",
       "children": [
-        { "label": "Financial Services" },
-        { "label": "Retail & Consumer Goods" },
-        { "label": "Healthcare" },
-        { "label": "Manufacturing" },
-        { "label": "Education" },
-        { "label": "Energy & Utilities" }
+        { "label": "Financial Services", "url": "/industries/financial-services" },
+        { "label": "Retail & Consumer Goods", "url": "/industries/retail" },
+        { "label": "Healthcare", "url": "/industries/healthcare" },
+        { "label": "Manufacturing", "url": "/industries/manufacturing" },
+        { "label": "Education", "url": "/industries/education" },
+        { "label": "Energy & Utilities", "url": "/industries/energy" }
       ]
     },
     {

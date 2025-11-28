@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Navigation, SkipLink, ErrorBoundary } from './components';
-import { Home, NestorApp, CollegeFinder, MetaWeaver, About, Contact } from './pages';
+import { Home, NestorApp, CollegeFinder, MetaWeaver, About, Contact, ComingSoon, GenAISolutions, DataEngineering, DocumentDatabase, Healthcare } from './pages';
 import type { MenuData } from './utils/types';
 import { addUrlsToMenuItems } from './utils/seoHelpers';
 import { loadMenuData as loadMenuDataUtil, getDefaultMenu } from './utils/menuLoader';
@@ -156,11 +156,26 @@ function App() {
           <main id="main-content" className="container-fluid px-0" tabIndex={-1}>
             <Routes>
               <Route path="/" element={<Home />} />
+              
+              {/* Products */}
               <Route path="/products/nestorapp" element={<NestorApp />} />
               <Route path="/products/collegefinder" element={<CollegeFinder />} />
               <Route path="/products/metaweaver" element={<MetaWeaver />} />
+              
+              {/* Solutions */}
+              <Route path="/solutions/genai-solutions" element={<GenAISolutions />} />
+              <Route path="/solutions/data-engineering" element={<DataEngineering />} />
+              <Route path="/solutions/document-database" element={<DocumentDatabase />} />
+              
+              {/* Industries */}
+              <Route path="/industries/healthcare" element={<Healthcare />} />
+              
+              {/* Main Pages */}
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              
+              {/* Catch-all route for pages under development */}
+              <Route path="*" element={<ComingSoon title="This Page" category="Luminova Services" />} />
             </Routes>
           </main>
         </div>
