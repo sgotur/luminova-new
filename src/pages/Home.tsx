@@ -59,86 +59,54 @@ export const Home = () => {
               </div>
             </div>
 
-            {/* Portfolio Section */}
-            <h2 className="mt-5 mb-4">Portfolio</h2>
-            <div className="row">
-              <div className="col-lg-4 col-sm-6 mb-4">
-                <div className="card h-100">
-                  <div className="card-body">
-                    <h4 className="card-title">Fractional CTO</h4>
-                    <p className="card-text">
-                      As a Fractional CTO, we partnered with a rapidly growing SaaS platform focused on serving municipal Parks and Recreation departments through cloud-based solutions for scheduling, facility management, and community engagement. We collaborated closely with the client's executive team to define and execute a forward-looking technology strategy. Our role included providing strategic architectural guidance, evaluating vendor and partner solutions, and leading system modernization initiatives—all while ensuring the platform remained lean, secure, and scalable.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-sm-6 mb-4">
-                <div className="card h-100">
-                  <div className="card-body">
-                    <h4 className="card-title">Tripster.AI</h4>
-                    <p className="card-text">
-                      AI driven Travel itinerary generation platform that leverages machine learning to create personalized travel plans for users.
-                    </p>
-                    <p>
-                      <a href="https://www.nestorapp.ai/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                        Try Nestor
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-sm-6 mb-4">
-                <div className="card h-100">
-                  <div className="card-body">
-                    <h4 className="card-title">ColegeFinder.AI</h4>
-                    <p className="card-text">
-                      AI powered platform designed to help students find the right college fit based on their unique preferences and qualifications.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Features Section */}
             <div className="row mt-5">
               <div className="col-lg-6">
                 <h2>Technology landscape</h2>
                 <p>Extensive experience with the following technologies:</p>
-                <div className="table-responsive">
-                  <table className="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th style={{ width: '35%' }}>Service Area</th>
-                        <th style={{ width: '65%' }}>Technologies/Skills Involved</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Generative AI Solutions</td>
-                        <td>LLMs, Prompt Engineering, AWS Bedrock/OpenAI, LangChain</td>
-                      </tr>
-                      <tr>
-                        <td>Full-Stack Development</td>
-                        <td>Python, .NET, Java, Angular, React, FastAPI, Spring Boot</td>
-                      </tr>
-                      <tr>
-                        <td>AWS Cloud Solutions</td>
-                        <td>Lambda, S3, API Gateway, DynamoDB, RDS, EC2, Terraform</td>
-                      </tr>
-                      <tr>
-                        <td>Database & Data Engineering</td>
-                        <td>PostgreSQL, MySQL, MongoDB, QDrant, Snowflake, ETL/ELT</td>
-                      </tr>
-                      <tr>
-                        <td>AI/ML Model Development</td>
-                        <td>Python ML libs, AI/ML algorithms, model fine-tuning</td>
-                      </tr>
-                      <tr>
-                        <td>Automation & DevOps</td>
-                        <td>CI/CD, CloudWatch, Terraform, Git, Agile</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div className="row g-3">
+                  <div className="col-12">
+                    <div className="d-flex border-bottom pb-2 mb-2">
+                      <div className="fw-bold" style={{ width: '35%' }}>Service Area</div>
+                      <div className="fw-bold" style={{ width: '65%' }}>Technologies/Skills Involved</div>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="d-flex border-bottom py-2">
+                      <div style={{ width: '35%' }}>Generative AI Solutions</div>
+                      <div style={{ width: '65%' }}>LLMs, Prompt Engineering, AWS Bedrock/OpenAI, LangChain</div>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="d-flex border-bottom py-2">
+                      <div style={{ width: '35%' }}>Full-Stack Development</div>
+                      <div style={{ width: '65%' }}>Python, .NET, Java, Angular, React, FastAPI, Spring Boot</div>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="d-flex border-bottom py-2">
+                      <div style={{ width: '35%' }}>AWS Cloud Solutions</div>
+                      <div style={{ width: '65%' }}>Lambda, S3, API Gateway, DynamoDB, RDS, EC2, Terraform</div>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="d-flex border-bottom py-2">
+                      <div style={{ width: '35%' }}>Database & Data Engineering</div>
+                      <div style={{ width: '65%' }}>PostgreSQL, MySQL, Oralce, SQL Server, MongoDB, DocumentDB, Neo4j, Neptune, DynamDB, Snowflake, ETL/ELT</div>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="d-flex border-bottom py-2">
+                      <div style={{ width: '35%' }}>AI/ML Model Development</div>
+                      <div style={{ width: '65%' }}>Python ML libs, AI/ML algorithms, model fine-tuning</div>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="d-flex border-bottom py-2">
+                      <div style={{ width: '35%' }}>Automation & DevOps</div>
+                      <div style={{ width: '65%' }}>CI/CD, CloudWatch, Terraform, Git, Agile</div>
+                    </div>
+                  </div>
                 </div>
               </div>
               {/* <div className="col-lg-6">

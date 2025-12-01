@@ -3,7 +3,7 @@ export const Healthcare = () => {
     <div className="container py-5">
       <div className="row">
         <div className="col-12 col-lg-10 mx-auto">
-          <h1 className="display-4 font-bold mb-3 text-accent-teal">Healthcare Solutions</h1>
+          {/* <h1 className="display-4 font-bold mb-3 text-accent-teal">Healthcare Solutions</h1> */}
           
           {/* Breadcrumb */}
           <nav aria-label="breadcrumb">
@@ -16,10 +16,11 @@ export const Healthcare = () => {
 
           <div className="card shadow-sm mb-4">
             <div className="card-body">
-              <h2 className="h4 mb-3">Transforming Healthcare with Technology</h2>
+              <h2 className="h4 mb-3">Revolutionizing Healthcare with AI and Cloud</h2>
               <p className="lead">
-                Deliver innovative solutions that improve patient outcomes, streamline operations, 
-                and ensure compliance with healthcare regulations like HIPAA.
+                Healthcare organizations are leveraging AI and cloud technologies to improve patient outcomes, 
+                accelerate diagnoses, personalize treatments, and streamline operations while maintaining 
+                HIPAA compliance and data security. Transform healthcare delivery with intelligent solutions.
               </p>
             </div>
           </div>
@@ -28,10 +29,11 @@ export const Healthcare = () => {
             <div className="col-md-6 mb-4">
               <div className="card h-100">
                 <div className="card-body">
-                  <h3 className="h5 mb-3">Electronic Health Records (EHR)</h3>
+                  <h3 className="h5 mb-3">AI-Powered Diagnostics</h3>
                   <p className="text-text-secondary">
-                    Build secure, interoperable EHR systems that improve care coordination and 
-                    provide healthcare providers with comprehensive patient information.
+                    Deploy machine learning models for medical image analysis, early disease detection, 
+                    and diagnostic support, processing radiology images, pathology slides, and patient data 
+                    in secure cloud environments with 95%+ accuracy.
                   </p>
                 </div>
               </div>
@@ -39,10 +41,11 @@ export const Healthcare = () => {
             <div className="col-md-6 mb-4">
               <div className="card h-100">
                 <div className="card-body">
-                  <h3 className="h5 mb-3">Telemedicine Platforms</h3>
+                  <h3 className="h5 mb-3">Cloud-Based EHR & Telemedicine</h3>
                   <p className="text-text-secondary">
-                    Develop telehealth solutions that connect patients with providers remotely, 
-                    expanding access to care and improving patient convenience.
+                    Build scalable, HIPAA-compliant electronic health record systems and telehealth platforms 
+                    on cloud infrastructure, enabling secure access to patient data and virtual care delivery 
+                    from anywhere.
                   </p>
                 </div>
               </div>
@@ -50,10 +53,11 @@ export const Healthcare = () => {
             <div className="col-md-6 mb-4">
               <div className="card h-100">
                 <div className="card-body">
-                  <h3 className="h5 mb-3">Healthcare Analytics</h3>
+                  <h3 className="h5 mb-3">Predictive Healthcare Analytics</h3>
                   <p className="text-text-secondary">
-                    Leverage data analytics and AI to identify trends, predict outcomes, 
-                    and support evidence-based decision making.
+                    Utilize AI to predict patient readmissions, identify high-risk populations, optimize 
+                    resource allocation, and support clinical decision-making with real-time analytics 
+                    processing vast healthcare datasets.
                   </p>
                 </div>
               </div>
@@ -61,10 +65,11 @@ export const Healthcare = () => {
             <div className="col-md-6 mb-4">
               <div className="card h-100">
                 <div className="card-body">
-                  <h3 className="h5 mb-3">Patient Engagement</h3>
+                  <h3 className="h5 mb-3">Intelligent Patient Engagement</h3>
                   <p className="text-text-secondary">
-                    Create patient portals and mobile apps that empower patients to manage 
-                    their health and communicate with care teams.
+                    Implement AI chatbots and virtual health assistants powered by LLMs to provide 24/7 
+                    patient support, appointment scheduling, medication reminders, and personalized health 
+                    guidance at scale.
                   </p>
                 </div>
               </div>
@@ -73,13 +78,14 @@ export const Healthcare = () => {
 
           <div className="card shadow-sm mt-4">
             <div className="card-body">
-              <h3 className="h4 mb-3">Our Healthcare Expertise</h3>
+              <h3 className="h4 mb-3">How AI & Cloud Transform Healthcare</h3>
               <ul className="list-unstyled">
-                <li className="mb-2">✓ HIPAA Compliance & Security</li>
-                <li className="mb-2">✓ HL7 & FHIR Integration</li>
-                <li className="mb-2">✓ Medical Device Integration</li>
-                <li className="mb-2">✓ Clinical Decision Support Systems</li>
-                <li className="mb-2">✓ Population Health Management</li>
+                <li className="mb-2">✓ AI diagnostics reducing diagnosis time by 50% with higher accuracy</li>
+                <li className="mb-2">✓ Cloud-based EHR enabling seamless care coordination across providers</li>
+                <li className="mb-2">✓ Predictive analytics reducing hospital readmissions by 25-30%</li>
+                <li className="mb-2">✓ Telemedicine platforms expanding access to care for rural populations</li>
+                <li className="mb-2">✓ AI-powered drug discovery accelerating research timelines</li>
+                <li className="mb-2">✓ HIPAA-compliant cloud infrastructure ensuring data security and privacy</li>
               </ul>
             </div>
           </div>

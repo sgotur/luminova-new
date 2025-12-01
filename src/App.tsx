@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Navigation, SkipLink, ErrorBoundary } from './components';
-import { Home, NestorApp, CollegeFinder, MetaWeaver, About, Contact, ComingSoon, GenAISolutions, CloudBIReporting, LowCodeNoCode, DataEngineering, AdvancedAnalytics, AppliedAIML, DocumentDatabase, GraphDatabase, TimeseriesDatabase, ApplicationModernization, DatabaseModernization, MVPDevelopment, EndToEndSaaS, ModernizedArchitecture, FractionalCTO, ApplicationDevelopment, MobileDevelopment, DevOps, Healthcare } from './pages';
+import { Home, NestorApp, CollegeFinder, MetaWeaver, About, Contact, ComingSoon, CloudEngineering, CloudArchitecture, CloudDevOps, GenAISolutions, CloudBIReporting, LowCodeNoCode, DataEngineering, AdvancedAnalytics, AppliedAIML, DocumentDatabase, GraphDatabase, TimeseriesDatabase, ApplicationModernization, DatabaseModernization, MVPDevelopment, EndToEndSaaS, ModernizedArchitecture, FractionalCTO, ApplicationDevelopment, MobileDevelopment, DevOps, Healthcare, FinancialServices, Retail, Manufacturing, Education, Energy } from './pages';
 import type { MenuData } from './utils/types';
 import { addUrlsToMenuItems } from './utils/seoHelpers';
 import { loadMenuData as loadMenuDataUtil, getDefaultMenu } from './utils/menuLoader';
@@ -163,6 +163,9 @@ function App() {
               <Route path="/products/metaweaver" element={<MetaWeaver />} />
               
               {/* Solutions */}
+              <Route path="/solutions/cloud-engineering" element={<CloudEngineering />} />
+              <Route path="/solutions/cloud-architecture" element={<CloudArchitecture />} />
+              <Route path="/solutions/cloud-devops" element={<CloudDevOps />} />
               <Route path="/solutions/genai-solutions" element={<GenAISolutions />} />
               <Route path="/solutions/cloud-bi-reporting" element={<CloudBIReporting />} />
               <Route path="/solutions/low-code-no-code" element={<LowCodeNoCode />} />
@@ -184,6 +187,11 @@ function App() {
               
               {/* Industries */}
               <Route path="/industries/healthcare" element={<Healthcare />} />
+              <Route path="/industries/financial-services" element={<FinancialServices />} />
+              <Route path="/industries/retail" element={<Retail />} />
+              <Route path="/industries/manufacturing" element={<Manufacturing />} />
+              <Route path="/industries/education" element={<Education />} />
+              <Route path="/industries/energy" element={<Energy />} />
               
               {/* Main Pages */}
               <Route path="/about" element={<About />} />

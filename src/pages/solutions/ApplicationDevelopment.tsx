@@ -3,7 +3,7 @@ export const ApplicationDevelopment = () => {
     <div className="container py-5">
       <div className="row">
         <div className="col-12 col-lg-10 mx-auto">
-          <h1 className="display-4 font-bold mb-3 text-accent-teal">Application Development</h1>
+          {/* <h1 className="display-4 font-bold mb-3 text-accent-teal">Application Development</h1> */}
           
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">

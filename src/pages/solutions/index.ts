@@ -1,3 +1,6 @@
+export { CloudEngineering } from './CloudEngineering';
+export { CloudArchitecture } from './CloudArchitecture';
+export { CloudDevOps } from './CloudDevOps';
 export { GenAISolutions } from './GenAISolutions';
 export { CloudBIReporting } from './CloudBIReporting';
 export { LowCodeNoCode } from './LowCodeNoCode';

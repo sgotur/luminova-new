@@ -4,6 +4,23 @@
       "label": "Solutions",
       "children": [
         {
+          "label": "AWS Cloud",
+          "children": [
+            {
+              "label": "Cloud Engineering",
+              "url": "/solutions/cloud-engineering"
+            },
+            {
+              "label": "Cloud Architecture",
+              "url": "/solutions/cloud-architecture"
+            },
+            {
+              "label": "Cloud DevOps",
+              "url": "/solutions/cloud-devops"
+            }
+          ]
+        },
+        {
           "label": "GenAI Development",
           "children": [
             {
