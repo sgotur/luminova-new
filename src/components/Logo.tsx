@@ -48,7 +48,7 @@ const LogoComponent: React.FC<LogoProps> = ({ src, alt, businessName, className 
       alt={alt}
       onError={handleImageError}
       className={`img-fluid object-contain ${className}`}
-      style={{ maxHeight: '144px', maxWidth: '563px' }}
+      style={{ maxHeight: '173px', maxWidth: '676px' }}
     />
   );
 };
