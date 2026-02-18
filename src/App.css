@@ -9,7 +9,7 @@
 
 .App {
   min-height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #0F172A;
   display: flex;
   flex-direction: column;
 }
@@ -67,7 +67,8 @@ html {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #F7F7F9;
+  background-color: #0F172A;
+  color: #F8FAFC;
 }
 
 /* Feature list styling */
@@ -95,7 +96,8 @@ html {
 }
 
 .card:hover {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
+  border-color: #475569 !important;
 }
 
 /* Support for reduced motion */

@@ -161,9 +161,10 @@ export const Navigation: React.FC<NavigationProps> = ({ menuData, logo, business
   }, [isMobile]);
 
   return (
-    <nav 
-      className="bg-bg-primary shadow-sm" 
-      role="navigation" 
+    <nav
+      className="bg-dark-800"
+      style={{ boxShadow: '0 1px 0 rgba(255,255,255,0.1)' }}
+      role="navigation"
       aria-label="Main navigation"
       onKeyDown={handleNavigationKeyDown}
     >
@@ -207,7 +208,7 @@ export const Navigation: React.FC<NavigationProps> = ({ menuData, logo, business
                     setIsMobileMenuOpen(false);
                   }
                 }}
-                className="mobile-menu-button btn btn-link p-2 text-text-primary rounded"
+                className="mobile-menu-button btn btn-link p-2 text-light rounded"
                 aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
                 aria-expanded={isMobileMenuOpen}
                 aria-controls="mobile-menu"

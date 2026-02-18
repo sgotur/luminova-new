@@ -1,7 +1,9 @@
 /* Contact Form Styles */
 
-/* Teal border for form inputs */
+/* Dark background with teal border for form inputs */
 #contactForm .form-control {
+  background-color: #1E293B !important;
+  color: #F8FAFC !important;
   border-color: #00A8B5 !important;
   border-width: 2px !important;
 }

@@ -3,7 +3,9 @@ import '../styles/contact.css';
 
 const formInputStyle = {
   borderColor: '#00A8B5',
-  borderWidth: '2px'
+  borderWidth: '2px',
+  backgroundColor: '#1E293B',
+  color: '#F8FAFC',
 };
 
 export const Contact = () => {
@@ -31,9 +33,6 @@ export const Contact = () => {
 
   return (
     <div className="container py-5">
-      {/* Page Heading */}
-      {/* <h1 className="mt-4 mb-3 text-accent-teal font-bold">Contact</h1> */}
-      
       {/* Breadcrumb */}
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
@@ -44,13 +43,14 @@ export const Contact = () => {
         </ol>
       </nav>
 
+      <h2 className="mb-4 font-bold" style={{ color: '#F8FAFC' }}>Contact Us</h2>
+
       {/* Content Row */}
       <div className="row">
         {/* Map Column */}
         <div className="col-lg-8 mb-4">
-          {/* Embedded Google Map */}
-          <div className="map-responsive">
-            <iframe 
+          <div className="map-responsive" style={{ borderRadius: '0.5rem', overflow: 'hidden', border: '1px solid #334155' }}>
+            <iframe
               style={{ width: '100%', height: '400px', border: 0 }}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.1853114191663!2d-80.75994542359165!3d35.301376672712294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88541c284d6b1eed%3A0x52a97652f4e31dc3!2s301%20McCullough%20Dr%20Suite%20400%2C%20Charlotte%2C%20NC%2028262!5e0!3m2!1sen!2sus!4v1764089486811!5m2!1sen!2sus"
               allowFullScreen
@@ -62,20 +62,22 @@ export const Contact = () => {
 
         {/* Contact Details Column */}
         <div className="col-lg-4 mb-4">
-          <h3>Contact Details</h3>
-          <p>
+          <h3 style={{ color: '#00A8B5' }}>Contact Details</h3>
+          <p style={{ color: '#94A3B8' }}>
             301 McCullough Drive,<br />
             University Executive Park Dr Ste 400,<br />
             Charlotte, NC 28262<br />
           </p>
-          <p>
+          <p style={{ color: '#94A3B8' }}>
             <abbr title="Phone">P</abbr>: (980) 999-0570
           </p>
-          <p>
+          <p style={{ color: '#94A3B8' }}>
             <abbr title="Email">E</abbr>:{' '}
-            <a href="mailto:admin@luminovatechnology.com">admin@luminovatechnology.com</a>
+            <a href="mailto:admin@luminovatechnology.com" style={{ color: '#00A8B5' }}>
+              admin@luminovatechnology.com
+            </a>
           </p>
-          <p>
+          <p style={{ color: '#94A3B8' }}>
             <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
           </p>
         </div>
@@ -84,7 +86,7 @@ export const Contact = () => {
       {/* Contact Form */}
       <div className="row">
         <div className="col-lg-8 mb-4">
-          <h3>Send us a Message</h3>
+          <h3 style={{ color: '#F8FAFC' }}>Send us a Message</h3>
           <form onSubmit={handleSubmit} id="contactForm">
             <div className="form-group mb-3">
               <label htmlFor="name">Full Name:</label>
@@ -145,19 +147,22 @@ export const Contact = () => {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary">
+            <button
+              type="submit"
+              className="btn"
+              style={{
+                background: 'linear-gradient(135deg, #00A8B5, #0891B2)',
+                border: 'none',
+                color: 'white',
+                fontWeight: 600,
+                padding: '0.6rem 2rem',
+              }}
+            >
               Send Message
             </button>
           </form>
         </div>
       </div>
-
-      {/* Footer */}
-      {/* <footer className="py-5 bg-dark mt-5">
-        <div className="container">
-          <p className="m-0 text-center text-white">Copyright &copy; Luminova 2025</p>
-        </div>
-      </footer> */}
     </div>
   );
 };

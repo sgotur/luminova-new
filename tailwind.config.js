@@ -7,13 +7,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Base colors
-        'bg-primary': '#FFFFFF',
-        'bg-secondary': '#F7F7F9',
-        'text-primary': '#222222',
-        'text-secondary': '#666666',
-        'text-muted': '#777777',
-        
+        // Dark theme base colors
+        'dark-900': '#080E1A',
+        'dark-800': '#0F172A',
+        'dark-700': '#1E293B',
+        'dark-600': '#334155',
+        'dark-500': '#475569',
+
+        // Text colors for dark theme
+        'text-light': '#F8FAFC',
+        'text-muted': '#94A3B8',
+
+        // Legacy text overrides (mapped to dark theme equivalents for backward compat)
+        'text-primary': '#F8FAFC',
+        'text-secondary': '#94A3B8',
+
         // Accent colors from logo
         'accent-teal': {
           DEFAULT: '#00A8B5',
@@ -30,10 +38,6 @@ export default {
           light: '#34D399',
           dark: '#059669',
         },
-        
-        // Dark theme colors
-        'footer-bg': '#18181B',
-        'footer-text': '#E5E7EB',
       },
     },
   },

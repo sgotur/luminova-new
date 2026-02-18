@@ -84,7 +84,7 @@ const DropdownComponent: React.FC<DropdownProps> = ({
    */
   const dropdownClasses = useMemo((): string => {
     // Bootstrap and Tailwind base classes - Requirements 7.3, 7.4
-    const baseClasses = 'bg-white border border-gray-200 rounded shadow-lg';
+    const baseClasses = 'bg-dark-700 border border-dark-600 rounded shadow-lg';
     
     // Tailwind spacing and sizing - Requirement 7.3
     const spacingClasses = 'py-2 px-0';

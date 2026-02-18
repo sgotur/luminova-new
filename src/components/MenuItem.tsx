@@ -196,7 +196,7 @@ const MenuItemComponent: React.FC<MenuItemProps> = ({
           onTouchStart={handleTouchStart}
           className={`
             ${itemClass} btn btn-link text-decoration-none
-            px-3 px-md-4 py-2 text-accent-teal rounded
+            px-3 px-md-4 py-2 text-light rounded
             d-inline-flex align-items-center
             ${isOpen ? 'active' : ''}
           `}
@@ -248,7 +248,7 @@ const MenuItemComponent: React.FC<MenuItemProps> = ({
         href={item.url}
         className={`
           ${isContactButton ? 'contact-button' : itemClass} btn ${isContactButton ? 'btn-primary' : 'btn-link'} text-decoration-none
-          px-3 px-md-4 py-2 ${isContactButton ? 'text-white rounded-pill' : 'text-accent-teal rounded'}
+          px-3 px-md-4 py-2 ${isContactButton ? 'text-white rounded-pill' : 'text-light rounded'}
           d-block
         `}
         style={isContactButton ? { 
@@ -272,7 +272,7 @@ const MenuItemComponent: React.FC<MenuItemProps> = ({
   return (
     <span
       className={`
-        ${itemClass} px-3 px-md-4 py-2 text-accent-teal
+        ${itemClass} px-3 px-md-4 py-2 text-light
         d-block
       `}
       role="menuitem"

@@ -111,11 +111,13 @@
 /* Custom styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0F172A;
+  color: #F8FAFC;
 }
 
 code {
@@ -214,11 +216,11 @@ code {
 
 /* Ensure Tailwind utilities work with Bootstrap components */
 .shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4) !important;
 }
 
 .shadow-lg {
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5) !important;
 }
 
 /* Ensure spacing utilities work correctly */
@@ -232,11 +234,11 @@ code {
 }
 
 .text-text-primary {
-  color: #222222 !important;
+  color: #F8FAFC !important;
 }
 
 .text-text-secondary {
-  color: #666666 !important;
+  color: #94A3B8 !important;
 }
 
 /* Ensure background color utilities work */
@@ -245,7 +247,7 @@ code {
 }
 
 .bg-bg-primary {
-  background-color: #FFFFFF !important;
+  background-color: #0F172A !important;
 }
 
 /* Ensure Bootstrap card styling */
@@ -255,10 +257,11 @@ code {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #1E293B;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 1px solid #334155;
   border-radius: 0.375rem;
+  color: #F8FAFC;
 }
 
 .card-body {
@@ -280,21 +283,21 @@ code {
 }
 
 .alert-danger {
-  color: #842029;
-  background-color: #f8d7da;
-  border-color: #f5c2c7;
+  color: #fca5a5;
+  background-color: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
 }
 
 .alert-warning {
-  color: #664d03;
-  background-color: #fff3cd;
-  border-color: #ffecb5;
+  color: #fde68a;
+  background-color: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.3);
 }
 
 .alert-info {
-  color: #055160;
-  background-color: #cff4fc;
-  border-color: #b6effb;
+  color: #67e8f9;
+  background-color: rgba(0, 168, 181, 0.15);
+  border-color: rgba(0, 168, 181, 0.3);
 }
 
 .alert-heading {
@@ -464,4 +467,112 @@ code {
 /* Ensure position utilities */
 .position-relative {
   position: relative !important;
+}
+
+/* ===== DARK THEME GLOBAL OVERRIDES ===== */
+
+/* Card header dark */
+.card-header {
+  background-color: #334155 !important;
+  border-bottom: 1px solid #475569 !important;
+  color: #F8FAFC !important;
+  font-weight: 600;
+}
+
+/* Form controls dark */
+.form-control {
+  background-color: #1E293B !important;
+  color: #F8FAFC !important;
+  border-color: #334155 !important;
+}
+
+.form-control:focus {
+  background-color: #1E293B !important;
+  color: #F8FAFC !important;
+  border-color: #00A8B5 !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 168, 181, 0.25) !important;
+}
+
+.form-control::placeholder {
+  color: #475569 !important;
+}
+
+/* Labels dark */
+label {
+  color: #F8FAFC;
+}
+
+/* Button overrides for dark theme */
+.btn-primary {
+  background: linear-gradient(135deg, #00A8B5, #0891B2) !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(135deg, #0891B2, #007A84) !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+
+.btn-outline-secondary {
+  color: #F8FAFC !important;
+  border-color: #334155 !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-secondary:hover {
+  color: #F8FAFC !important;
+  background-color: #334155 !important;
+  border-color: #475569 !important;
+}
+
+/* Breadcrumb dark theme */
+.breadcrumb-item a {
+  color: #94A3B8 !important;
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  color: #00A8B5 !important;
+}
+
+.breadcrumb-item.active {
+  color: #F8FAFC !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #475569;
+}
+
+/* HR divider dark */
+hr {
+  border-color: #334155;
+  opacity: 0.5;
+}
+
+/* Table row separators dark */
+.border-bottom {
+  border-color: #334155 !important;
+}
+
+/* ===== BRAND UTILITY CLASSES ===== */
+
+/* Gradient brand button/background */
+.gradient-brand {
+  background: linear-gradient(135deg, #00A8B5, #0891B2) !important;
+}
+
+/* Glassmorphism card for dark sections */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(0, 168, 181, 0.3) !important;
 }
