@@ -14,7 +14,19 @@
       "Bash(python -m app.db.init_tables:*)",
       "Bash(uvicorn:*)",
       "Bash(python3:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(aws lambda list-functions:*)",
+      "Bash(aws lambda get-function:*)",
+      "Bash(aws apigateway get-rest-apis:*)",
+      "Bash(aws cloudformation describe-stacks:*)",
+      "Bash(aws dynamodb list-tables:*)",
+      "Bash(npm install:*)",
+      "Bash(curl:*)",
+      "Bash(aws dynamodb scan:*)",
+      "Bash(npx vercel:*)",
+      "Bash(sam build:*)",
+      "Bash(sam deploy:*)",
+      "Bash(npm uninstall:*)"
     ]
   }
 }

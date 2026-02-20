@@ -34,7 +34,6 @@ function JobCard({ job }: { job: Job }) {
         marginBottom: '1rem',
       }}
     >
-      {/* Title + Location row */}
       <div className="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
         <h2
           style={{
@@ -66,7 +65,6 @@ function JobCard({ job }: { job: Job }) {
         )}
       </div>
 
-      {/* Description */}
       {description && (
         <div>
           <p
@@ -108,6 +106,8 @@ function JobCard({ job }: { job: Job }) {
   );
 }
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
+
 export function Careers() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
@@ -120,7 +120,7 @@ export function Careers() {
     try {
       const params = new URLSearchParams({ limit: '20' });
       if (!reset && lastKey) params.set('last_key', lastKey);
-      const res = await fetch(`/api/public/jobs?${params}`);
+      const res = await fetch(`${API_BASE}/api/public/jobs?${params}`);
       if (!res.ok) throw new Error(`Failed to load jobs (${res.status})`);
       const data: PaginatedJobs = await res.json();
       setJobs(prev => reset ? data.items : [...prev, ...data.items]);
@@ -136,7 +136,6 @@ export function Careers() {
 
   return (
     <div>
-      {/* Header strip */}
       <div
         style={{
           background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
@@ -164,7 +163,6 @@ export function Careers() {
         </div>
       </div>
 
-      {/* Job list */}
       <div className="container py-5">
         {loading && (
           <div className="text-center py-5">

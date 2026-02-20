@@ -5,11 +5,7 @@ from app.config import settings
 
 @lru_cache(maxsize=1)
 def get_dynamodb_resource():
-    kwargs = {"region_name": settings.aws_region}
-    if settings.aws_access_key_id:
-        kwargs["aws_access_key_id"] = settings.aws_access_key_id
-        kwargs["aws_secret_access_key"] = settings.aws_secret_access_key
-    return boto3.resource("dynamodb", **kwargs)
+    return boto3.resource("dynamodb", region_name=settings.aws_region)
 
 
 def get_table(name: str):

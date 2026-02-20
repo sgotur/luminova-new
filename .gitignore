@@ -12,6 +12,8 @@ node_modules
 .pnp
 .pnp.js
 admin-api/.venv
+admin-api/samconfig.toml
+admin-api/.aws-sam
 
 # Build output
 dist

@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from mangum import Mangum
 from app.config import settings
 from app.auth.router import router as auth_router
 from app.resources.router import router as resources_router
@@ -9,10 +10,12 @@ from app.employees.router import router as employees_router
 
 app = FastAPI(title="Luminova Admin API", version="1.0.0")
 
+_origins = ["*"] if settings.frontend_origin == "*" else [o.strip() for o in settings.frontend_origin.split(",")]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.frontend_origin],
-    allow_credentials=True,
+    allow_origins=_origins,
+    allow_credentials=_origins != ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -27,3 +30,6 @@ app.include_router(employees_router, prefix="/api")
 @app.get("/api/health")
 async def health():
     return {"status": "ok"}
+
+
+handler = Mangum(app)
