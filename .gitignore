@@ -11,6 +11,7 @@ lerna-debug.log*
 node_modules
 .pnp
 .pnp.js
+admin-api/.venv
 
 # Build output
 dist
@@ -24,10 +25,13 @@ coverage
 
 # Environment variables
 .env
+.env.example
 .env.local
+admin-api/.env
 .env.development.local
 .env.test.local
 .env.production.local
+.venv
 
 # Editor directories and files
 .vscode/*
@@ -64,3 +68,5 @@ Thumbs.db
 
 # Optional eslint cache
 .eslintcache
+
+CLAUDE.md

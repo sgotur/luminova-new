@@ -4,6 +4,7 @@ export { CollegeFinder } from './CollegeFinder';
 export { MetaWeaver } from './MetaWeaver';
 export { About } from './About';
 export { Contact } from './Contact';
+export { Careers } from './Careers';
 export { ComingSoon } from './ComingSoon';
 export { GenericPage } from './GenericPage';
 

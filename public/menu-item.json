@@ -171,25 +171,12 @@
       ]
     },
     {
-      "label": "Resources",
-      "children": [
-        {
-          "label": "Blogs"
-        },
-        {
-          "label": "Case Studies"
-        },
-        {
-          "label": "Whitepaper"
-        },
-        {
-          "label": "Downloadables"
-        }
-      ]
-    },
-    {
       "label": "About",
       "url": "/about"
+    },
+    {
+      "label": "Careers",
+      "url": "/careers"
     },
     {
       "label": "Contact Us",

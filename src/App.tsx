@@ -2,12 +2,13 @@ import { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Navigation, SkipLink, ErrorBoundary } from './components';
-import { Home, NestorApp, CollegeFinder, MetaWeaver, About, Contact, ComingSoon, CloudEngineering, CloudArchitecture, CloudDevOps, GenAISolutions, CloudBIReporting, LowCodeNoCode, DataEngineering, AdvancedAnalytics, AppliedAIML, DocumentDatabase, GraphDatabase, TimeseriesDatabase, ApplicationModernization, DatabaseModernization, MVPDevelopment, EndToEndSaaS, ModernizedArchitecture, FractionalCTO, ApplicationDevelopment, MobileDevelopment, DevOps, Healthcare, FinancialServices, Retail, Manufacturing, Education, Energy } from './pages';
+import { Home, NestorApp, CollegeFinder, MetaWeaver, About, Contact, Careers, ComingSoon, CloudEngineering, CloudArchitecture, CloudDevOps, GenAISolutions, CloudBIReporting, LowCodeNoCode, DataEngineering, AdvancedAnalytics, AppliedAIML, DocumentDatabase, GraphDatabase, TimeseriesDatabase, ApplicationModernization, DatabaseModernization, MVPDevelopment, EndToEndSaaS, ModernizedArchitecture, FractionalCTO, ApplicationDevelopment, MobileDevelopment, DevOps, Healthcare, FinancialServices, Retail, Manufacturing, Education, Energy } from './pages';
 import type { MenuData } from './utils/types';
 import { addUrlsToMenuItems } from './utils/seoHelpers';
 import { loadMenuData as loadMenuDataUtil, getDefaultMenu } from './utils/menuLoader';
+import { AdminApp } from './admin';
 
-function App() {
+function PublicSite() {
   const [menuData, setMenuData] = useState<MenuData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -17,24 +18,24 @@ function App() {
   const loadMenuData = useCallback(async () => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       // Use the utility function with validation - Requirement 8.1
       const data = await loadMenuDataUtil();
-      
+
       // Add URLs to menu items for SEO crawlability - Requirements 9.2, 9.3
       const menuWithUrls = {
         ...data,
         menu: addUrlsToMenuItems(data.menu)
       };
-      
+
       setMenuData(menuWithUrls);
       setIsLoading(false);
       setRetryCount(0); // Reset retry count on success
     } catch (error) {
       // Log error appropriately - Requirement 8.1
       console.error('Menu loading error:', error);
-      
+
       // Determine error message based on error type
       let errorMessage = 'Unable to load navigation menu.';
       if (error instanceof Error) {
@@ -46,10 +47,10 @@ function App() {
           errorMessage = error.message;
         }
       }
-      
+
       setError(errorMessage);
       setIsLoading(false);
-      
+
       // Use default menu as fallback - Requirement 8.1
       const defaultMenu = getDefaultMenu();
       const menuWithUrls = {
@@ -123,85 +124,97 @@ function App() {
   }
 
   return (
+    <div className="App">
+      {/* Error notification banner if error exists but we have fallback menu - Requirement 8.1 */}
+      {error && menuData && (
+        <div className="alert alert-warning alert-dismissible fade show mb-0 rounded-0" role="alert">
+          <div className="container-fluid">
+            <strong>Notice:</strong> {error} Using default menu.
+            <button
+              onClick={handleRetry}
+              className="btn btn-sm btn-warning ms-3"
+              disabled={retryCount >= MAX_RETRIES}
+            >
+              {retryCount >= MAX_RETRIES ? 'Max Retries Reached' : 'Retry'}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Skip navigation link for accessibility - Requirements 5.1, 5.3 */}
+      <SkipLink />
+
+      <Navigation
+        menuData={menuData?.menu || []}
+        logo="/logo.png"
+        businessName="Luminova Technology"
+      />
+
+      {/* Main content with proper heading hierarchy - Requirement 9.4 */}
+      {/* ID for skip link target - Requirement 5.1 */}
+      <main id="main-content" className="container-fluid px-0" tabIndex={-1}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          {/* Products */}
+          <Route path="/products/nestorapp" element={<NestorApp />} />
+          <Route path="/products/collegefinder" element={<CollegeFinder />} />
+          <Route path="/products/metaweaver" element={<MetaWeaver />} />
+
+          {/* Solutions */}
+          <Route path="/solutions/cloud-engineering" element={<CloudEngineering />} />
+          <Route path="/solutions/cloud-architecture" element={<CloudArchitecture />} />
+          <Route path="/solutions/cloud-devops" element={<CloudDevOps />} />
+          <Route path="/solutions/genai-solutions" element={<GenAISolutions />} />
+          <Route path="/solutions/cloud-bi-reporting" element={<CloudBIReporting />} />
+          <Route path="/solutions/low-code-no-code" element={<LowCodeNoCode />} />
+          <Route path="/solutions/data-engineering" element={<DataEngineering />} />
+          <Route path="/solutions/advanced-analytics" element={<AdvancedAnalytics />} />
+          <Route path="/solutions/applied-ai-ml" element={<AppliedAIML />} />
+          <Route path="/solutions/document-database" element={<DocumentDatabase />} />
+          <Route path="/solutions/graph-database" element={<GraphDatabase />} />
+          <Route path="/solutions/timeseries-database" element={<TimeseriesDatabase />} />
+          <Route path="/solutions/application-modernization" element={<ApplicationModernization />} />
+          <Route path="/solutions/database-modernization" element={<DatabaseModernization />} />
+          <Route path="/solutions/mvp-development" element={<MVPDevelopment />} />
+          <Route path="/solutions/end-to-end-saas" element={<EndToEndSaaS />} />
+          <Route path="/solutions/modernized-architecture" element={<ModernizedArchitecture />} />
+          <Route path="/solutions/fractional-cto" element={<FractionalCTO />} />
+          <Route path="/solutions/application-development" element={<ApplicationDevelopment />} />
+          <Route path="/solutions/mobile-development" element={<MobileDevelopment />} />
+          <Route path="/solutions/devops" element={<DevOps />} />
+
+          {/* Industries */}
+          <Route path="/industries/healthcare" element={<Healthcare />} />
+          <Route path="/industries/financial-services" element={<FinancialServices />} />
+          <Route path="/industries/retail" element={<Retail />} />
+          <Route path="/industries/manufacturing" element={<Manufacturing />} />
+          <Route path="/industries/education" element={<Education />} />
+          <Route path="/industries/energy" element={<Energy />} />
+
+          {/* Main Pages */}
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/careers" element={<Careers />} />
+
+          {/* Catch-all route for pages under development */}
+          <Route path="*" element={<ComingSoon title="This Page" category="Luminova Services" />} />
+        </Routes>
+      </main>
+    </div>
+  );
+}
+
+function App() {
+  return (
     <ErrorBoundary>
       <Router>
-        <div className="App">
-          {/* Error notification banner if error exists but we have fallback menu - Requirement 8.1 */}
-          {error && menuData && (
-            <div className="alert alert-warning alert-dismissible fade show mb-0 rounded-0" role="alert">
-              <div className="container-fluid">
-                <strong>Notice:</strong> {error} Using default menu.
-                <button
-                  onClick={handleRetry}
-                  className="btn btn-sm btn-warning ms-3"
-                  disabled={retryCount >= MAX_RETRIES}
-                >
-                  {retryCount >= MAX_RETRIES ? 'Max Retries Reached' : 'Retry'}
-                </button>
-              </div>
-            </div>
-          )}
-          
-          {/* Skip navigation link for accessibility - Requirements 5.1, 5.3 */}
-          <SkipLink />
-          
-          <Navigation 
-            menuData={menuData?.menu || []} 
-            logo="/logo.png" 
-            businessName="Luminova Technology"
-          />
-          
-          {/* Main content with proper heading hierarchy - Requirement 9.4 */}
-          {/* ID for skip link target - Requirement 5.1 */}
-          <main id="main-content" className="container-fluid px-0" tabIndex={-1}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              
-              {/* Products */}
-              <Route path="/products/nestorapp" element={<NestorApp />} />
-              <Route path="/products/collegefinder" element={<CollegeFinder />} />
-              <Route path="/products/metaweaver" element={<MetaWeaver />} />
-              
-              {/* Solutions */}
-              <Route path="/solutions/cloud-engineering" element={<CloudEngineering />} />
-              <Route path="/solutions/cloud-architecture" element={<CloudArchitecture />} />
-              <Route path="/solutions/cloud-devops" element={<CloudDevOps />} />
-              <Route path="/solutions/genai-solutions" element={<GenAISolutions />} />
-              <Route path="/solutions/cloud-bi-reporting" element={<CloudBIReporting />} />
-              <Route path="/solutions/low-code-no-code" element={<LowCodeNoCode />} />
-              <Route path="/solutions/data-engineering" element={<DataEngineering />} />
-              <Route path="/solutions/advanced-analytics" element={<AdvancedAnalytics />} />
-              <Route path="/solutions/applied-ai-ml" element={<AppliedAIML />} />
-              <Route path="/solutions/document-database" element={<DocumentDatabase />} />
-              <Route path="/solutions/graph-database" element={<GraphDatabase />} />
-              <Route path="/solutions/timeseries-database" element={<TimeseriesDatabase />} />
-              <Route path="/solutions/application-modernization" element={<ApplicationModernization />} />
-              <Route path="/solutions/database-modernization" element={<DatabaseModernization />} />
-              <Route path="/solutions/mvp-development" element={<MVPDevelopment />} />
-              <Route path="/solutions/end-to-end-saas" element={<EndToEndSaaS />} />
-              <Route path="/solutions/modernized-architecture" element={<ModernizedArchitecture />} />
-              <Route path="/solutions/fractional-cto" element={<FractionalCTO />} />
-              <Route path="/solutions/application-development" element={<ApplicationDevelopment />} />
-              <Route path="/solutions/mobile-development" element={<MobileDevelopment />} />
-              <Route path="/solutions/devops" element={<DevOps />} />
-              
-              {/* Industries */}
-              <Route path="/industries/healthcare" element={<Healthcare />} />
-              <Route path="/industries/financial-services" element={<FinancialServices />} />
-              <Route path="/industries/retail" element={<Retail />} />
-              <Route path="/industries/manufacturing" element={<Manufacturing />} />
-              <Route path="/industries/education" element={<Education />} />
-              <Route path="/industries/energy" element={<Energy />} />
-              
-              {/* Main Pages */}
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              
-              {/* Catch-all route for pages under development */}
-              <Route path="*" element={<ComingSoon title="This Page" category="Luminova Services" />} />
-            </Routes>
-          </main>
-        </div>
+        <Routes>
+          {/* Admin portal — isolated, no public nav */}
+          <Route path="/admin/*" element={<AdminApp />} />
+          {/* Public site */}
+          <Route path="/*" element={<PublicSite />} />
+        </Routes>
       </Router>
     </ErrorBoundary>
   );
